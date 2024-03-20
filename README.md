@@ -17,7 +17,7 @@
 	- go to localhost:8081. write ip address 192.168.88.1. write password 12345. apply configuration.
 	- go to localhost:8080. user:mikhmon password:1234. add router. ip address 172.27.0.7, user:admin, password: 12345. write 'test' other inputs.last click save button
 	- for stop --> docker-compose down
-	
+
 #### Update 09-08 2020 V3.19
 1. Penambahan jumlah sisa voucher di "option comment" laman user list.
 
@@ -32,7 +32,7 @@
 1. Penambahan harga jual. (Harga yang tampil di voucher)
 
 	*update user profile isi harga jual(selling price) dan update juga template vouchernya, silakan download di [website](https://laksa19.github.io/?mikhmon/v3/voucher)
-	
+
 2. Untuk pengguna Termux, uninstall Mikhmon kemudian install lagi. 
 
 #### Update 08-06 2019 V3.17
