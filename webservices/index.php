@@ -30,9 +30,9 @@ $url = $_SERVER['REQUEST_URI'];
 $session = $_GET['session'];
 
 if (!isset($_SESSION["mikhmon"])) {
-  header("Location:./webservices/admin.php?id=login");
+  header("Location:./admin.php?id=login");
 } elseif (empty($session)) {
-  echo "<script>window.location='./webservices/admin.php?id=sessions'</script>";
+  echo "<script>window.location='./admin.php?id=sessions'</script>";
 } else {
   $_SESSION["$session"] = $session;
   $setsession = $_SESSION["$session"];
