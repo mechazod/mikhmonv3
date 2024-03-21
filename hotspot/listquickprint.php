@@ -21,8 +21,8 @@ error_reporting(0);
 
 ini_set('max_execution_time', 300);
 
-if (!isset($_SESSION["mikhmon"])) {
-	header("Location:../admin.php?id=login");
+if (!isset($_SESSION["taskmaster"])) {
+	header("Location:../taskmaster.php?id=login");
 } else {
 	$qpid = $_GET['qpid'];
 	$rem = $_GET['remove'];

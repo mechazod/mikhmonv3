@@ -1,4 +1,4 @@
-### MIKHMON V3
+### IONEMON V3
 
 #### Download update.zip
 [update.zip](https://raw.githubusercontent.com/laksa19/laksa19.github.io/master/download/update.zip){:target="_blank"}
@@ -7,7 +7,7 @@
 
 #### Update 06-30 2021 V3.20
 1. Perbaikan typo script profile ```on-login```.
-	- Silakan update user profile dari Mikhmon, dengan cara membuka tiap user profile, kemudian klik Save.
+	- Silakan update user profile dari iOnemon, dengan cara membuka tiap user profile, kemudian klik Save.
 
 #### Update 24-01 2021
 1. Added docker-compose.yml for test-lab. added mikrotik routeros image.
@@ -15,7 +15,7 @@
 	- open project folder in terminal
 	- run terminal command --> docker-compose up -d
 	- go to localhost:8081. write ip address 192.168.88.1. write password 12345. apply configuration.
-	- go to localhost:8080. user:mikhmon password:1234. add router. ip address 172.27.0.7, user:admin, password: 12345. write 'test' other inputs.last click save button
+	- go to localhost:8080. user:taskmaster password:1234. add router. ip address 172.27.0.7, user:admin, password: 12345. write 'test' other inputs.last click save button
 	- for stop --> docker-compose down
 	
 #### Update 09-08 2020 V3.19
@@ -31,9 +31,9 @@
 #### Update 08-16 2019 V3.18
 1. Penambahan harga jual. (Harga yang tampil di voucher)
 
-	*update user profile isi harga jual(selling price) dan update juga template vouchernya, silakan download di [website](https://laksa19.github.io/?mikhmon/v3/voucher)
+	*update user profile isi harga jual(selling price) dan update juga template vouchernya, silakan download di [website](https://laksa19.github.io/?taskmaster/v3/voucher)
 	
-2. Untuk pengguna Termux, uninstall Mikhmon kemudian install lagi. 
+2. Untuk pengguna Termux, uninstall iOnemon kemudian install lagi. 
 
 #### Update 08-06 2019 V3.17
 1. Perbaikan live report.
@@ -67,7 +67,7 @@
 1. Perbaikan penghitungan tanggal dan jam monitor user profile. 
 2. Perubahan global function ke local function. 
 
-	Silakan diupdate kembali user profilenya. (buka user profile dari Mikhmon, simpan kembali masing-masing user profile).
+	Silakan diupdate kembali user profilenya. (buka user profile dari iOnemon, simpan kembali masing-masing user profile).
 
 	Setelah update user profile hapus semua environment (system -> scripts -> environment).
 
@@ -94,7 +94,7 @@
 1. Perbaikan user profile, untuk data penjualan dobel (user 2 digit angka). Silakan diupdate kembali user profilenya.
 
 #### Update 03-21 2019 V3.13 r1
-1. Perbaikan user profile, untuk data penjualan tidak muncul di Mikhmon. Silakan diupdate kembali user profilenya.
+1. Perbaikan user profile, untuk data penjualan tidak muncul di iOnemon. Silakan diupdate kembali user profilenya.
 
 #### Update 03-20 2019 V3.13
 1. Perbaikan QR Code. Tidak lagi menggunakan Google chart API.
@@ -120,7 +120,7 @@
 4. Pehapusan info start dan end user.
 5. Perubahan mode expired. 
 	
-	Mode baru ini tidak lagi menggunakan scheduler per user. Sebagai gantinya informasi tanggal expired akan dipindahkan ke comment user setelah login. Silakan update user profile agar dapat menggunakan mode expired yang baru. Pengecekan expired user yang login sebelum user profile diupdate atau yang masih menggunakan mode expired versi 3.12, bisa melalui scheduler di Mikhmon.
+	Mode baru ini tidak lagi menggunakan scheduler per user. Sebagai gantinya informasi tanggal expired akan dipindahkan ke comment user setelah login. Silakan update user profile agar dapat menggunakan mode expired yang baru. Pengecekan expired user yang login sebelum user profile diupdate atau yang masih menggunakan mode expired versi 3.12, bisa melalui scheduler di iOnemon.
 
     ! Untuk yang menggunakan expired mode dengan record jangan update user profile yang sudah ada, sampai user dengan profile tersebut sudah habis. Sebaiknya buat user profile baru dan generate user baru dengan user profile tersebut. Apa yang terjadi jika diupdate? Report penjualan akan menjadi bertambah untuk masing-user yang sudah login. Tapi kalau tidak ada masalah dengan data penjualan yang double, silakan update user profilenya.
 
@@ -133,12 +133,12 @@
 6. Cek status voucher tidak bisa untuk user yang masih menggunakan profile dengan mode expired versi 3.12.
 
 #### Update 03-12 2019 V3.12 r1
-1. Perbaikan user profile. Meminimalisir user terhapus sesaat setelah login. !Silakan update user profile dari Mikhmon.
+1. Perbaikan user profile. Meminimalisir user terhapus sesaat setelah login. !Silakan update user profile dari iOnemon.
 
 #### Update 03-08 2019 V3.12
 1. Perbaikan remove session.
 2. Penambahan print untuk report
-3. Penambahan filter berdasarkan comment dan range tanggal. (Mikhmon Online).
+3. Penambahan filter berdasarkan comment dan range tanggal. (iOnemon Online).
 
 #### Update 02-14 2019 V3.11
 1. Perbaikan dashboard blank.
@@ -167,7 +167,7 @@ Panduan, https://laksa19.github.io/printBT.html
 #### Update 01-27-2019 V3.9
 1. Perbaikan CSS, penambahan tema Blue dan Green.
 2. Cek Koneksi sebelum masuk dashboard dan berganti session.
-3. Penambahan Indikator session Mikhmon yang aktif.
+3. Penambahan Indikator session iOnemon yang aktif.
 4. Penambahan fitur Resume Report.
 
 #### Update 01-22-2019 V3.8
@@ -198,7 +198,7 @@ Panduan, https://laksa19.github.io/printBT.html
 
 #### Update 10-30-2018 V3.4
 1. Penambahan cek spasi di nama user profile.
-2. Penambahan user profile dan comment di Report. Yang perlu dilakukan adalah update user profile dari Mikhmon, buka user profile yang ingin diupdate kemudian klik Save. 
+2. Penambahan user profile dan comment di Report. Yang perlu dilakukan adalah update user profile dari iOnemon, buka user profile yang ingin diupdate kemudian klik Save. 
 3. Penambahan filter berdasarkan server hotspot di Hotspot Active.
 
 #### Update 10-24-2018 V3.3

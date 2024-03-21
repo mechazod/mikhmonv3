@@ -24,7 +24,7 @@ ob_start("ob_gzhandler");
 // check url
 $url = $_SERVER['REQUEST_URI'];
 
-// load session MikroTik
+// load session iOne2GO
 $session = $_GET['session'];
 $id = $_GET['id'];
 $c = $_GET['c'];
@@ -74,9 +74,9 @@ if ($id == "login" || substr($url, -1) == "p") {
     $user = $_POST['user'];
     $pass = $_POST['pass'];
     if ($user == $useradm && $pass == decrypt($passadm)) {
-      $_SESSION["mikhmon"] = $user;
+      $_SESSION["taskmaster"] = $user;
 
-        echo "<script>window.location='./admin.php?id=sessions'</script>";
+        echo "<script>window.location='./taskmaster.php?id=sessions'</script>";
     
     } else {
       $error = '<div style="width: 100%; padding:5px 0px 5px 0px; border-radius:5px;" class="bg-danger"><i class="fa fa-ban"></i> Alert!<br>Invalid username or password.</div>';
@@ -85,10 +85,10 @@ if ($id == "login" || substr($url, -1) == "p") {
   
 
   include_once('./include/login.php');
-} elseif (!isset($_SESSION["mikhmon"])) {
-  echo "<script>window.location='./admin.php?id=login'</script>";
+} elseif (!isset($_SESSION["taskmaster"])) {
+  echo "<script>window.location='./taskmaster.php?id=login'</script>";
 } elseif (substr($url, -1) == "/" || substr($url, -4) == ".php") {
-  echo "<script>window.location='./admin.php?id=sessions'</script>";
+  echo "<script>window.location='./taskmaster.php?id=sessions'</script>";
 
 } elseif ($id == "sessions") {
   $_SESSION["connect"] = "";
@@ -125,14 +125,14 @@ if ($id == "login" || substr($url, -1) == "p") {
     $_SESSION["connect"] = "<b class='text-red'>Not Connected</b>";
     $nl = '\n';
     if ($currency == in_array($currency, $cekindo['indo'])) {
-      echo "<script>alert('Mikhmon not connected!".$nl."Silakan periksa kembali IP, User, Password dan port API harus enable.".$nl."Jika menggunakan koneksi VPN, pastikan VPN tersebut terkoneksi.')</script>";
+      echo "<script>alert('iOnemon not connected!".$nl."Silakan periksa kembali IP, User, Password dan port API harus enable.".$nl."Jika menggunakan koneksi VPN, pastikan VPN tersebut terkoneksi.')</script>";
     }else{
-      echo "<script>alert('Mikhmon not connected!".$nl."Please check the IP, User, Password and port API must be enabled.')</script>";
+      echo "<script>alert('iOnemon not connected!".$nl."Please check the IP, User, Password and port API must be enabled.')</script>";
     }
     if($c == "settings"){
-      echo "<script>window.location='./admin.php?id=settings&session=" . $session . "'</script>";
+      echo "<script>window.location='./taskmaster.php?id=settings&session=" . $session . "'</script>";
     }else{
-      echo "<script>window.location='./admin.php?id=sessions'</script>";
+      echo "<script>window.location='./taskmaster.php?id=sessions'</script>";
     }
   }
 } elseif ($id == "uplogo"  && !empty($session)) {
@@ -153,7 +153,7 @@ if ($id == "login" || substr($url, -1) == "p") {
       fputs($f, $line);
   }
   fclose($f);
-  echo "<script>window.location='./admin.php?id=sessions'</script>";
+  echo "<script>window.location='./taskmaster.php?id=sessions'</script>";
 } elseif ($id == "about") {
   include_once('./include/menu.php');
   include_once('./include/about.php');
@@ -161,24 +161,24 @@ if ($id == "login" || substr($url, -1) == "p") {
   include_once('./include/menu.php');
   echo "<b class='cl-w'><i class='fa fa-circle-o-notch fa-spin' style='font-size:24px'></i> Logout...</b>";
   session_destroy();
-  echo "<script>window.location='./admin.php?id=login'</script>";
+  echo "<script>window.location='./taskmaster.php?id=login'</script>";
 } elseif ($id == "remove-logo" && $logo != ""  && !empty($session)) {
   include_once('./include/menu.php');
   $logopath = "./img/";
   $remlogo = $logopath . $logo;
   unlink("$remlogo");
-  echo "<script>window.location='./admin.php?id=uplogo&session=" . $session . "'</script>";
+  echo "<script>window.location='./taskmaster.php?id=uplogo&session=" . $session . "'</script>";
 } elseif ($id == "editor"  && !empty($session)) {
   include_once('./include/menu.php');
   include_once('./settings/vouchereditor.php');
 } elseif (empty($id)) {
-  echo "<script>window.location='./admin.php?id=sessions'</script>";
+  echo "<script>window.location='./taskmaster.php?id=sessions'</script>";
 } elseif(in_array($id, $ids) && empty($session)){
-	echo "<script>window.location='./admin.php?id=sessions'</script>";
+	echo "<script>window.location='./taskmaster.php?id=sessions'</script>";
 }
 ?>
-<script src="js/mikhmon-ui.<?= $theme; ?>.min.js"></script>
-<script src="js/mikhmon.js?t=<?= str_replace(" ","_",date("Y-m-d H:i:s")); ?>"></script>
+<script src="js/taskmaster-ui.<?= $theme; ?>.min.js"></script>
+<script src="js/taskmaster.js?t=<?= str_replace(" ","_",date("Y-m-d H:i:s")); ?>"></script>
 <?php include('./include/info.php'); ?>
 </body>
 </html>

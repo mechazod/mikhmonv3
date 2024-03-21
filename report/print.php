@@ -18,11 +18,11 @@
 session_start();
 // hide all error
 error_reporting(0);
-if (!isset($_SESSION["mikhmon"])) {
-	header("Location:../admin.php?id=login");
+if (!isset($_SESSION["taskmaster"])) {
+	header("Location:../taskmaster.php?id=login");
 } else {
   
-  // load session MikroTik
+  // load session iOne2GO
   $session = $_GET['session'];
 
   // lang
@@ -127,7 +127,7 @@ if (!isset($_SESSION["mikhmon"])) {
 	} elseif ($idhr == "" || $idbl == "") {
 		if ($API->connect($iphost, $userhost, decrypt($passwdhost))) {
 			$getData = $API->comm("/system/script/print", array(
-				"?comment" => "mikhmon",
+				"?comment" => "taskmaster",
 			));
 			$TotalReg = count($getData);
 		}
@@ -151,7 +151,7 @@ if (!isset($_SESSION["mikhmon"])) {
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>.:: MIKHMON <?= $hotspotname; ?> ::.</title>
+		<title>.:: IONEMON <?= $hotspotname; ?> ::.</title>
 		<meta charset="utf-8">
 		<meta http-equiv="cache-control" content="private" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">

@@ -18,8 +18,8 @@
 session_start();
 // hide all error
 error_reporting(0);
-if (!isset($_SESSION["mikhmon"])) {
-	header("Location:../admin.php?id=login");
+if (!isset($_SESSION["taskmaster"])) {
+	header("Location:../taskmaster.php?id=login");
 } else {
 
 	$idhr = $_GET['idhr'];
@@ -101,7 +101,7 @@ if (!isset($_SESSION["mikhmon"])) {
 	} elseif ($idhr == "" || $idbl == "") {
 		if ($API->connect($iphost, $userhost, decrypt($passwdhost))) {
 			$getData = $API->comm("/system/script/print", array(
-				"?comment" => "mikhmon",
+				"?comment" => "taskmaster",
 			));
 			$TotalReg = count($getData);
 		}
@@ -141,11 +141,11 @@ if (!isset($_SESSION["mikhmon"])) {
 			  // Click download link
 			  downloadLink.click();
 			  }
-			  
+
 			  function exportTableToCSV(filename) {
 			    var csv = [];
 			    var rows = document.querySelectorAll("#dataTable tr");
-			    
+
 			   for (var i = 0; i < rows.length; i++) {
 			      var row = [], cols = rows[i].querySelectorAll("td, th");
 			   for (var j = 0; j < cols.length; j++)
@@ -185,23 +185,23 @@ function number_format(number, decimals, dec_point, thousands_sep) {
   }
   return s.join(dec);
 }
-        
+
 		window.onload=function() {
           var sum = 0;
           var dataTable = document.getElementById("selling");
-          
+
           // use querySelector to find all second table cells
           var cells = document.querySelectorAll("td + td + td + td + td + td");
           for (var i = 0; i < cells.length; i++)
           sum+=parseFloat(cells[i].firstChild.data);
-          
+
           var th = document.getElementById('total');
     <?php if ($currency == in_array($currency, $cekindo['indo'])) {
       echo 'th.innerHTML = "'.$currency.' " + number_format(th.innerHTML + (sum),"","",".") ;';
 		} else {
 			echo 'th.innerHTML = "'.$currency.' " + number_format(th.innerHTML + (sum),2,".",",") ;';
 		} ?>
-		
+
 		var tables = document.getElementsByTagName('tbody');
     var table = tables[tables.length -1];
     var rows = table.rows;
@@ -233,14 +233,11 @@ $(document).ready(function(){
 	<div class="col-12">
 		<div style="padding-bottom: 5px; padding-top: 5px;">
 		  <input id="filterTable" type="text" class="form-control" style="float:left; margin-top: 6px; max-width: 150px;" placeholder="<?= $_search ?>">&nbsp;
-		  <button name="help" class="btn bg-primary" onclick="location.href='#help';" title="Help"><i class="fa fa-question"></i> <?= $_help ?></button>
-		  <button class="btn bg-primary" onclick="exportTableToCSV('report-mikhmon-<?= $filedownload . $fprefix; ?>.csv')" title="Download selling report"><i class="fa fa-download"></i> CSV</button>
+		  <button class="btn bg-primary" onclick="exportTableToCSV('report-taskmaster-<?= $filedownload . $fprefix; ?>.csv')" title="Download selling report"><i class="fa fa-download"></i> CSV</button>
 			<button class="btn bg-primary" onclick="location.href='./?report=selling&session=<?= $session; ?>';" title="Reload all data"><i class="fa fa-search"></i> <?= $_all ?></button>
 			<?php if(!empty($idbl)){echo '<button name="resume" id="openResume" class="btn bg-primary"title="Resume Report"><i class="fa fa-area-chart"></i> '.$_resume.'</button>';}else{
 				echo '<a class="btn bg-primary" href="./?report=selling&idbl='.$idbl2.'&session='.$session.'" title="Show '.ucfirst(substr($idbl2,0,3).' '.substr($idbl2,3,5)).'"><i class="fa fa-search"></i> '.ucfirst(substr($idbl2,0,3).' '.substr($idbl2,3,5)).'</a>';}?>
 		  <button name="print" class="btn bg-primary" onclick="window.open('./report/print.php?<?= explode("?report=selling&",$url)[1] ?>','_blank');" title="Print"><i class="fa fa-print"></i> <?= $_print ?></button>
-		  <button style="display: <?= $shd; ?>;" name="remdata" class="btn bg-danger" onclick="location.href='#remdata';" title="Delete Data <?= $filedownload; ?>"><i class="fa fa-trash"></i> <?= $_delete_data.' '. $filedownload; ?></button>
-		  <button  id="remSelected" style="display: none;" class="btn bg-red" onclick="MikhmonRemoveReportSelected()"><i class="fa fa-trash"></i> <span id="selected"></span> <?= $_selected ?></button>
 		</div>
 	</div>
 	</div>
@@ -411,13 +408,13 @@ $(document).ready(function(){
 					echo $price;
 					echo "</td>";
 					echo "</tr>";
-				
+
 				$dataresume .= $getname[0].$getname[3];
 				$totalresume += $getname[3];
 				$_SESSION['dataresume'] = $dataresume;
 				$_SESSION['totalresume'] = $TotalReg.'/'.$totalresume;
 				}
-					
+
 			}
 
 			?>

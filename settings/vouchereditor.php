@@ -19,10 +19,10 @@ session_start();
 ?>
 <?php
 error_reporting(0);
-if (!isset($_SESSION["mikhmon"])) {
-	header("Location:../admin.php?id=login");
+if (!isset($_SESSION["taskmaster"])) {
+	header("Location:../taskmaster.php?id=login");
 } else {
-// load session MikroTik
+// load session iOne2GO
 	$session = $_GET['session'];
 
 // load config
@@ -53,7 +53,7 @@ if (isset($_POST['save'])) {
 	$data = ($_POST['editor']);
 
 	fwrite($handle, $data);
-		
+
 		//header("Location:$url");
 }
 
@@ -61,7 +61,7 @@ if (isset($_POST['save'])) {
 ?>
 <!-- Create a simple CodeMirror instance -->
 <link rel="stylesheet" href="./css/editor.min.css">
-<script src="./js/editor.min.js"></script>	
+<script src="./js/editor.min.js"></script>
 
 <style>
 .CodeMirror {
@@ -100,21 +100,20 @@ textarea{
 								<div class="input-group-3">
 									<select style="padding:4.2px;"  class="group-item group-item-m" onchange="window.location.href=this.value+'&session=<?= $session; ?>';">
 	    								<option><?= ucfirst($telplate); ?></option>
-	    								<option value="./admin.php?id=editor&template=default">Default</option>
-	    								<option value="./admin.php?id=editor&template=thermal">Thermal</option>
-	    								<option value="./admin.php?id=editor&template=small">Small</option>
+	    								<option value="./taskmaster.php?id=editor&template=default">Default</option>
+	    								<option value="./taskmaster.php?id=editor&template=thermal">Thermal</option>
+	    								<option value="./taskmaster.php?id=editor&template=small">Small</option>
 	    							</select>
 	    						</div>
-								
 								<div class="input-group-3">
             						<div class="group-item group-item-m pd-2p5 text-center">Reset</div>
             					</div>
 	    						<div class="input-group-3">
 	    							<select style="padding:4.2px;"  class="group-item group-item-r" onchange="window.location.href=this.value+'&session=<?= $session; ?>';">
 	    								<option><?= ucfirst($telplate); ?></option>
-	    								<option value="./admin.php?id=editor&template=rdefault">Default</option>
-	    								<option value="./admin.php?id=editor&template=rthermal">Thermal</option>
-	    								<option value="./admin.php?id=editor&template=rsmall">Small</option>
+	    								<option value="./taskmaster.php?id=editor&template=rdefault">Default</option>
+	    								<option value="./taskmaster.php?id=editor&template=rthermal">Thermal</option>
+	    								<option value="./taskmaster.php?id=editor&template=rsmall">Small</option>
 	    							</select>
 	    						</div>
 								</div>

@@ -459,7 +459,7 @@ function decrypt($string, $key=128) {
 	return $result;
 }
 
-// Reformat date time MikroTik
+// Reformat date time iOne2GO
 // by Laksamadi Guko
 
 function formatInterval($dtm){

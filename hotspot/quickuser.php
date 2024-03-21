@@ -19,14 +19,14 @@ session_start();
 // hide all error
 error_reporting(0);
 
-if (!isset($_SESSION["mikhmon"])) {
-	header("Location:../admin.php?id=login");
+if (!isset($_SESSION["taskmaster"])) {
+	header("Location:../taskmaster.php?id=login");
 } else {
 
 // time zone
 date_default_timezone_set($_SESSION['timezone']);
 	
-// load session MikroTik
+// load session iOne2GO
 $session = $_GET['session'];
 
 $quickprint = $_GET['quickprint'];

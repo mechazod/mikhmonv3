@@ -18,10 +18,10 @@
 session_start();
 // hide all error
 error_reporting(0);
-if (!isset($_SESSION["mikhmon"])) {
-  header("Location:../admin.php?id=login");
+if (!isset($_SESSION["taskmaster"])) {
+  header("Location:../taskmaster.php?id=login");
 } else {
-// load session MikroTik
+// load session iOne2GO
   $session = $_GET['session'];
   $load = $_GET['load'];
 
@@ -45,13 +45,13 @@ include('../lang/'.$langid.'.php');
 
     $API->connect($iphost, $userhost, decrypt($passwdhost));
 
-// get MikroTik system clock
+// get iOne2GO system clock
     $getclock = $API->comm("/system/clock/print");
     $clock = $getclock[0];
     $timezone = $getclock[0]['time-zone-name'];
     date_default_timezone_set($timezone);
 
-// get system resource MikroTik
+// get system resource iOne2GO
     $getresource = $API->comm("/system/resource/print");
     $resource = $getresource[0];
 

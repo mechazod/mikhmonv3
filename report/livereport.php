@@ -18,10 +18,10 @@
 session_start();
 // hide all error
 error_reporting(0);
-if (!isset($_SESSION["mikhmon"])) {
-  header("Location:../admin.php?id=login");
+if (!isset($_SESSION["taskmaster"])) {
+  header("Location:../taskmaster.php?id=login");
 } else {
-// load session MikroTik
+// load session iOne2GO
   $session = $_GET['session'];
 // set  timezone
 date_default_timezone_set($_SESSION['timezone']);
@@ -81,11 +81,11 @@ include('../lang/'.$langid.'.php');
 
     }*/
     foreach($getSRBl as $row){
-    
+
       if((explode("-|-", $row['name'])[0]) == $idhr){
          $tHr += explode("-|-", $row['name'])[3];
          $TotalRHr += count((array)$row['source']); /*Modif line add (array) by github https://github.com/MasKawer*/
- 
+
        }
        $tBl += explode("-|-", $row['name'])[3];
 
@@ -95,7 +95,6 @@ include('../lang/'.$langid.'.php');
       }else{
         $_SESSION[$session.'totalHr'] = $TotalRHr;
       }
-      
     }
   }
 }
@@ -108,7 +107,7 @@ include('../lang/'.$langid.'.php');
                     <div class="box-group-area">
                       <span >
                         <div id="reloadLreport">
-                        <?php 
+                        <?php
                           if ($currency == in_array($currency, $cekindo['indo'])) {
                             $dincome = number_format((float)$tHr, 0, ",", ".");
                             $mincome = number_format((float)$tBl, 0, ",", ".");
@@ -130,4 +129,3 @@ include('../lang/'.$langid.'.php');
               </div>
             </div>
             </div>
-            

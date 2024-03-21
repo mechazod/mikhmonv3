@@ -1,5 +1,5 @@
 /**
- * Mikhmon Light theme for Highcharts JS
+ * iOnemon Light theme for Highcharts JS
  * @author Laksamadi Guko
  */
 

@@ -20,8 +20,8 @@
 error_reporting(0);
 ini_set('max_execution_time', 300);
 
-if (!isset($_SESSION["mikhmon"])) {
-  header("Location:../admin.php?id=login");
+if (!isset($_SESSION["taskmaster"])) {
+  header("Location:../taskmaster.php?id=login");
 } else {
 
   if ($prof == "all") {
@@ -84,8 +84,6 @@ if (!isset($_SESSION["mikhmon"])) {
         if ($counttuser == 0) {
           echo "<script>window.location='./?hotspot=users&profile=all&session=" . $session . "</script>";
         } ?>
-         &nbsp; | &nbsp; <a href="./?hotspot-user=add&session=<?= $session; ?>" title="Add User"><i class="fa fa-user-plus"></i> <?= $_add ?></a>
-        &nbsp; | &nbsp; <a href="./?hotspot-user=generate&session=<?= $session; ?>" title="Generate User"><i class="fa fa-users"></i> <?= $_generate ?></a>
          &nbsp; | &nbsp; <a href="<?= str_replace("=users", "=export-users", $url); ?>&export=script" title="Download User List as Mikrotik Script"><i class="fa fa-download"></i> Script</a>&nbsp; | &nbsp; <a href="<?= str_replace("=users", "=export-users", $url); ?>&export=csv" title="Download User List as CSV"><i class="fa fa-download"></i> CSV</a>
         </span>  &nbsp;
         <small id="loader" style="display: none;" ><i><i class='fa fa-circle-o-notch fa-spin'></i> <?= $_processing ?> </i></small>

@@ -18,8 +18,8 @@
 session_start();
 // hide all error
 error_reporting(0);
-if (!isset($_SESSION["mikhmon"])) {
-  header("Location:../admin.php?id=login");
+if (!isset($_SESSION["taskmaster"])) {
+  header("Location:../taskmaster.php?id=login");
 } else {
 
   if (isset($_POST['submit'])) {
@@ -30,14 +30,14 @@ if (!isset($_SESSION["mikhmon"])) {
       $API->read();
     }
     session_destroy();
-    echo "<script>window.location='./admin.php?id=login'</script>";
+    echo "<script>window.location='./taskmaster.php?id=login'</script>";
   }
 }
 ?>
 <div style="padding-top:10%;" class="register-box">
   <div class="card">
     <div class="card-header">
-        <h3 class="card-title"><i class="fa fa-power-off"></i> Reboot MikroTik</h3>
+        <h3 class="card-title"><i class="fa fa-power-off"></i> Reboot iOne2GO</h3>
     </div>
   	<div class="card-body text-center">
   		<form action="" method="post" enctype="multipart/form-data">

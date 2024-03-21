@@ -21,8 +21,8 @@ error_reporting(0);
 
 ini_set('max_execution_time', 300);
 
-if (!isset($_SESSION["mikhmon"])) {
-	header("Location:../admin.php?id=login");
+if (!isset($_SESSION["taskmaster"])) {
+	header("Location:../taskmaster.php?id=login");
 } else {
 // time zone
 date_default_timezone_set($_SESSION['timezone']);
@@ -431,9 +431,6 @@ date_default_timezone_set($_SESSION['timezone']);
 		</div>
 		<div class="card-body">
 <table class="table table-bordered">
-  <tr>
-  	<td><?= $_generate_code ?></td><td><?= $ucode ?></td>
-  </tr>
   <tr>
   	<td><?= $_date ?></td><td><?= $udate ?></td>
   </tr>

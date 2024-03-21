@@ -27,10 +27,10 @@ session_start();
     </div>
     <div class="card-body">
       <div class="text-center pd-5">
-        <img src="img/favicon.png" alt="MIKHMON Logo">
+        <img src="img/favicon.png" alt="IONEMON Logo">
       </div>
       <div  class="text-center">
-      <span style="font-size: 25px; margin: 10px;">MIKHMON</span>
+      <span style="font-size: 25px; margin: 10px;">IONEMON</span>
       </div>
       <center>
       <form autocomplete="off" action="" method="post">

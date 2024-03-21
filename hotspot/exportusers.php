@@ -19,8 +19,8 @@
 // hide all error
 error_reporting(0);
 ini_set('max_execution_time', 300);
-if (!isset($_SESSION["mikhmon"])) {
-  header("Location:../admin.php?id=login");
+if (!isset($_SESSION["taskmaster"])) {
+  header("Location:../taskmaster.php?id=login");
 } else {
 
   if ($prof == "all") {
@@ -60,7 +60,7 @@ if (!isset($_SESSION["mikhmon"])) {
 <div class="col-12">
 <div class="card">
 <div class="card-header">
-    <h3><i class="fa fa-users"></i> Export Hotspot Users | <strong class="pointer" onclick="exportTableToCSV('export-user-hotspot-mikhmon-<?= date("Y-m-d"); ?>.<?php if ($_GET['export'] == "csv") {
+    <h3><i class="fa fa-users"></i> Export Hotspot Users | <strong class="pointer" onclick="exportTableToCSV('export-user-hotspot-taskmaster-<?= date("Y-m-d"); ?>.<?php if ($_GET['export'] == "csv") {
                                                                                                                                                                   echo "csv";
                                                                                                                                                                 } else {
                                                                                                                                                                   echo "txt";

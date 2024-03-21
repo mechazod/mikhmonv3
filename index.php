@@ -25,14 +25,14 @@ ob_start("ob_gzhandler");
 
 $url = $_SERVER['REQUEST_URI'];
 
-// load session MikroTik
+// load session iOne2GO
 
 $session = $_GET['session'];
 
-if (!isset($_SESSION["mikhmon"])) {
-  header("Location:./admin.php?id=login");
+if (!isset($_SESSION["taskmaster"])) {
+  header("Location:./taskmaster.php?id=login");
 } elseif (empty($session)) {
-  echo "<script>window.location='./admin.php?id=sessions'</script>";
+  echo "<script>window.location='./taskmaster.php?id=sessions'</script>";
 } else {
   $_SESSION["$session"] = $session;
   $setsession = $_SESSION["$session"];
@@ -140,7 +140,7 @@ if (!isset($_SESSION["mikhmon"])) {
 
     session_destroy();
     echo "<script>sessionStorage.clear();</script>";
-    echo "<script>window.location='./admin.php?id=login'</script>";
+    echo "<script>window.location='./taskmaster.php?id=login'</script>";
   }
 // redirect to home
   elseif (substr(explode("=", $url)[0],-9) == "/?session") {
@@ -504,8 +504,8 @@ elseif ($ppp == "edit-profile") {
 </div>
 <script src="./js/highcharts/highcharts.js"></script>
 <script src="./js/highcharts/themes/hc.<?= $theme; ?>.js"></script>
-<script src="./js/mikhmon-ui.<?= $theme; ?>.min.js"></script>
-<script src="./js/mikhmon.js?t=<?= str_replace(" ","_",date("Y-m-d H:i:s")); ?>"></script>
+<script src="./js/taskmaster-ui.<?= $theme; ?>.min.js"></script>
+<script src="./js/taskmaster.js?t=<?= str_replace(" ","_",date("Y-m-d H:i:s")); ?>"></script>
 
 <?php
 if ($hotspot == "dashboard" || substr(end(explode("/", $url)), 0, 8) == "?session") {

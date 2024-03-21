@@ -18,8 +18,8 @@
 
 // hide all error
 error_reporting(0);
-if (!isset($_SESSION["mikhmon"])) {
-  header("Location:../admin.php?id=login");
+if (!isset($_SESSION["taskmaster"])) {
+  header("Location:../taskmaster.php?id=login");
 } else {
 
 // array color
@@ -32,8 +32,8 @@ if (!isset($_SESSION["mikhmon"])) {
     $logobt = ($_POST['logobt']);
     $qrbt = ($_POST['qrbt']);
 
-    $cari = array('1' => "mikhmon<|<$useradm", "mikhmon>|>$passadm");
-    $ganti = array('1' => "mikhmon<|<$suseradm", "mikhmon>|>$spassadm");
+    $cari = array('1' => "taskmaster<|<$useradm", "taskmaster>|>$passadm");
+    $ganti = array('1' => "taskmaster<|<$suseradm", "taskmaster>|>$spassadm");
 
     for ($i = 1; $i < 3; $i++) {
       $file = file("./include/config.php");
@@ -48,7 +48,7 @@ if (!isset($_SESSION["mikhmon"])) {
           $handle = fopen($key, 'w') or die('Cannot open file:  ' . $key);
           $data = $gen;
           fwrite($handle, $data);
-    echo "<script>window.location='./admin.php?id=sessions'</script>";
+    echo "<script>window.location='./taskmaster.php?id=sessions'</script>";
   }
 
 }
@@ -81,7 +81,7 @@ if (!isset($_SESSION["mikhmon"])) {
               <?php
               foreach (file('./include/config.php') as $line) {
                 $value = explode("'", $line)[1];
-                if ($value == "" || $value == "mikhmon") {
+                if ($value == "" || $value == "taskmaster") {
                 } else { ?>
                     <div class="col-12">
                         <div class="box bmh-75 box-bordered <?= $color[rand(1, 11)]; ?>">
@@ -98,9 +98,9 @@ if (!isset($_SESSION["mikhmon"])) {
                                       <?= $_hotspot_name ?> : <?= explode('%', $data[$value][4])[1]; ?><br>
                                       <?= $_session_name ?> : <?= $value; ?><br>
                                       <span class="connect pointer"  id="<?= $value; ?>"><i class="fa fa-external-link"></i> <?= $_open ?></span>&nbsp;
-                                      <a href="./admin.php?id=settings&session=<?= $value; ?>"><i class="fa fa-edit"></i> <?= $_edit ?></a>&nbsp;
+                                      <a href="./taskmaster.php?id=settings&session=<?= $value; ?>"><i class="fa fa-edit"></i> <?= $_edit ?></a>&nbsp;
                                       <a href="javascript:void(0)" onclick="if(confirm('Are you sure to delete data <?= $value;
-                                      echo " (" . explode('%', $data[$value][4])[1] . ")"; ?>?')){loadpage('./admin.php?id=remove-session&session=<?= $value; ?>')}else{}"><i class="fa fa-remove"></i> <?= $_delete ?></a>
+                                      echo " (" . explode('%', $data[$value][4])[1] . ")"; ?>?')){loadpage('./taskmaster.php?id=remove-session&session=<?= $value; ?>')}else{}"><i class="fa fa-remove"></i> <?= $_delete ?></a>
                                     </span>
 
                                   </div>

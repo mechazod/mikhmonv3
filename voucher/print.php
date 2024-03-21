@@ -21,13 +21,13 @@ error_reporting(0);
 
 ob_start("ob_gzhandler");
 
-if (!isset($_SESSION["mikhmon"])) {
-  header("Location:../admin.php?id=login");
+if (!isset($_SESSION["taskmaster"])) {
+  header("Location:../taskmaster.php?id=login");
 } else {
   
   date_default_timezone_set($_SESSION['timezone']);
   
-// load session MikroTik
+// load session iOne2GO
   $session = $_GET['session'];
 
 // load config
