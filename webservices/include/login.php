@@ -30,7 +30,7 @@ session_start();
         <img src="img/favicon.png">
       </div>
       <div  class="text-center">
-      <span style="font-size: 25px; margin: 10px;">iOne-2Go</span>
+      <span style="font-size: 20px; margin: 10px;">iOne WIFI Management System</span>
       </div>
       <center>
       <form autocomplete="off" action="" method="post">
