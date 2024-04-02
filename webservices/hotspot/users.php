@@ -173,7 +173,6 @@ if (!isset($_SESSION["mikhmon"])) {
 <table id="dataTable" class="table table-bordered table-hover text-nowrap">
   <thead>
   <tr>
-    <th style="min-width:50px;" class="align-middle text-center" id="cuser"><?= $counttuser; ?></th>
     <th style="min-width:50px;" class="pointer" title="Click to sort"><i class="fa fa-sort"></i> Server</th>
     <th class="pointer" title="Click to sort"><i class="fa fa-sort"></i> <?= $_name ?></th>
     <th>Print</th>
@@ -216,15 +215,7 @@ for ($i = 0; $i < $TotalReg; $i++) {
 
   echo "<tr>";
   ?>
-  <td style='text-align:center;'>  <i class='fa fa-minus-square text-danger pointer' onclick="if(confirm('Are you sure to delete username (<?= $uname; ?>)?')){loadpage('./?remove-hotspot-user=<?= $uid; ?>&session=<?= $session; ?>')}else{}" title='Remove <?= $uname; ?>'></i>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
   <?php
-  if ($udisabled == "true") {
-    $uriprocess = "'./?enable-hotspot-user=" . $uid . "&session=" . $session."'";
-    echo '<span class="text-warning pointer" title="Enable User ' . $uname . '"  onclick="loadpage('.$uriprocess.')"><i class="fa fa-lock "></i></span></td>';
-  } else {
-    $uriprocess = "'./?disable-hotspot-user=" . $uid . "&session=" . $session."'";
-    echo '<span class="pointer" title="Disable User ' . $uname . '"  onclick="loadpage('.$uriprocess.')"><i class="fa fa-unlock "></i></span></td>';
-  }
   echo "<td>" . $userver . "</td>";
   if ($uname == $upass) {
     $usermode = "vc";
@@ -233,7 +224,7 @@ for ($i = 0; $i < $TotalReg; $i++) {
   }
   $popup = "javascript:window.open('./voucher/print.php?user=" . $usermode . "-" . $uname . "&qr=no&session=" . $session . "','_blank','width=320,height=550').print();";
   $popupQR = "javascript:window.open('./voucher/print.php?user=" . $usermode . "-" . $uname . "&qr=yes&session=" . $session . "','_blank','width=320,height=550').print();";
-  echo "<td><a title='Open User " . $uname . "' href=./?hotspot-user=" . $uid . "&session=" . $session . "><i class='fa fa-edit'></i> " . $uname . " </a>";
+  echo "<td>" . $uname . "";
   echo '</td><td class"text-center"><a title="Print ' . $uname . '" href="' . $popup . '"><i class="fa fa-print"></i></a> &nbsp <a title="Print ' . $uname . '" href="' . $popupQR . '"><i class="fa fa-qrcode"></i> </a></td>';
   echo "<td>" . $uprofile . "</td>";
   echo "<td style=' text-align:left'>" . $umacadd . "</td>";
